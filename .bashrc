@@ -73,7 +73,7 @@ if [ "$TERM" != "dumb" -a -z "$BASH_EXECUTION_STRING" ]; then
     export LS_COLORS=
 
     # Alias definitions.
-    alias l='ls -hF --color=always'
+    alias l='ls -hFlA --color=always'
     alias ls='ls -hF --color=always'
     alias ll='ls -hFl --color=always'
     alias la='ls -hFA --color=always'
@@ -120,7 +120,7 @@ if [ "$TERM" != "dumb" -a -z "$BASH_EXECUTION_STRING" ]; then
         if [ -z "$*" ]; then
             c .
         else
-            ls -hF --color=always $@
+          ls -hFlA --color=always $@
         fi
     }
 
@@ -176,7 +176,7 @@ if [ "$TERM" != "dumb" -a -z "$BASH_EXECUTION_STRING" ]; then
       cat ~/.name 
     fi
     #output the current directorys contents
-    l 
+    ls
 fi
 
 
