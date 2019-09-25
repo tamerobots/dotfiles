@@ -87,6 +87,43 @@ if [ "$TERM" != "dumb" -a -z "$BASH_EXECUTION_STRING" ]; then
     alias uuuuu='c ../../../../..'
     alias uuuuuu='c ../../../../../..'
 
+    # c = cd; ls
+    function c {
+
+        # cd to the first argument
+        if [ "$1" = "" ]; then
+            # If none then go to ~ like cd does
+            cd || return
+        elif [ "$1" != "." ]; then
+            # If "." don't do anything, so that "cd -" still works
+            # Don't output the path as I'm going to anyway (done by "cd -" and cdspell)
+            cd "$1" >/dev/null || return
+        fi
+
+        # Remove that argument
+        shift
+
+        # Output the path
+        echo
+        echo -en "\e[4;1m"
+        echo $PWD
+        echo -en "\e[0m"
+
+        # Then pass the rest to ls (just in case we have any use for that!)
+        ls -h --color=always "$@"
+
+    }
+
+    export -f c
+
+    function l {
+        if [ -z "$*" ]; then
+            c .
+        else
+            ls -hF --color=always $@
+        fi
+    }
+
     # /home/www shortcuts
         if [ -n "$www_dir" ]; then
             alias cw="c $www_dir"
@@ -147,3 +184,4 @@ fi
 # Git Cygwin loads this file *and* .bash_profile so set a flag to tell
 # .bash_profile not to load .bashrc again
 BASHRC_DONE=1
+
