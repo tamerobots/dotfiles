@@ -1,0 +1,57 @@
+[user]
+    name = TameRobots
+    email = dave@tamerobots.com
+
+[core]
+    excludesfile = ~/.gitignore-global
+
+[color]
+    branch = auto
+    status = auto
+    diff = auto
+
+[pack]
+    threads = 0
+
+[pager]
+    ls-files = true
+    status = true
+
+[alias]
+    addremove = add -A
+    amend = commit --amend -C HEAD
+    ar = add -A
+    arst = !git add -A && git status
+    b = branch
+    ba = branch -a
+    branches = branch
+    ci = commit
+    cm = commit -m 
+    co = checkout
+    d = diff
+    dc = diff --cached
+    fe = fetch
+    glog = log --graph
+    id = log --pretty=format:'ID:    %h%nDate:  %aD%nRefs:%d' --abbrev-commit --date=short -1
+    ignored = ls-files --others -i --exclude-standard
+    in = incoming
+    mt = mergetool
+    out = outgoing
+    remotes = remote -v
+    root = rev-parse --show-toplevel
+    serve = instaweb
+    sh = repl
+    st = status
+    sub = submodule
+    tags = tag
+    web = instaweb
+
+[github]
+    user = tamerobots
+
+[browser "none"]
+    cmd = git-web-browser
+
+[instaweb]
+    httpd = apache2
+    browser = none
