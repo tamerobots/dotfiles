@@ -45,6 +45,7 @@ if [ "$TERM" != "dumb" -a -z "$BASH_EXECUTION_STRING" ]; then
     {
         
         # Set the prompt        
+        PS1=
         PS1="${PS1}\[\e[30;1m\]["               # [                             Grey
         PS1="${PS1}\[\e[31;1m\]\u"              # Username                      Red
         PS1="${PS1}\[\e[30;1m\]@"               # @                             Grey
@@ -72,6 +73,7 @@ if [ "$TERM" != "dumb" -a -z "$BASH_EXECUTION_STRING" ]; then
     export LS_COLORS=
 
     # Alias definitions.
+    alias l='ls -hF --color=always'
     alias ls='ls -hF --color=always'
     alias ll='ls -hFl --color=always'
     alias la='ls -hFA --color=always'
@@ -133,8 +135,11 @@ fi
 # But only do this once - gitolite seems to load this file twice!
 if [ "$TERM" != "dumb" -a -z "$BASH_EXECUTION_STRING" ]; then
     # Welcome message if it exists
-    cat ~/.name 
-    l
+    if [ -f ~/.name ]; then
+      cat ~/.name 
+    fi
+    #output the current directorys contents
+    l 
 fi
 
 
