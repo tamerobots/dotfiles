@@ -12,7 +12,7 @@
 
 dir=~/dotfiles                    # dotfiles directory
 olddir=~/dotfiles_old             # old dotfiles backup directory
-files=".bashrc .profile"    # list of files/folders to symlink in homedir
+files=".bashrc .profile .inputrc"    # list of files/folders to symlink in homedir
 
 ##########
 
