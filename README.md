@@ -10,5 +10,5 @@ install-dotfiles.sh just backs up any relevant dotfiles you may already have in 
 
 
 ### Thanks ###
-Thanks to github.com/davejamesmiller, github.om/michaeljsmalley/ and others.
+Thanks to [github.com/davejamesmiller](https://www.github.com/davejamesmiller), [github.com/michaeljsmalley](https://www.github.com/michaeljsmalley) and others.
 
