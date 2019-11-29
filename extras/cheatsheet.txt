@@ -1,0 +1,2 @@
+======== Cheatsheet =========
+sha256sum <file>                          get sha256 hash of file

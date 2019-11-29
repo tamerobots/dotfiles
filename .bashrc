@@ -259,6 +259,10 @@ if [ "$TERM" != "dumb" -a -z "$BASH_EXECUTION_STRING" ]; then
       fi
     fi
 
+    if [ -f ~/dotfiles/extras/cheatsheet.txt ]; then
+      alias cheatsheet='less ~/dotfiles/extras/cheatsheet.txt'
+    fi
+
 fi # $TERM != "dumb"
 
 # Prevent errors when MSG is set in .bashrc_local
