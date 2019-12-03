@@ -10,6 +10,10 @@ git clone git://github.com/tamerobots/dotfiles ~/dotfiles
 cd ~/dotfiles
 ./install-dotfiles.sh
 ```
+Restart your terminal, or just enter:
+```
+source ~/.bashrc
+```
 
 install-dotfiles.sh just backs up any relevant dotfiles you may already have in your home directory to a new directory 'dotfiles_old', and then replaces the originals in the home directory with symlinks to those in /dotfiles/.
 
