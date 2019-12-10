@@ -1,2 +1,3 @@
-======== Cheatsheet =========
+======== Cheatsheet (dotfiles/extras/cheatsheet.txt)  =========
 sha256sum <file>                          get sha256 hash of file
+playbell				  play a noise
