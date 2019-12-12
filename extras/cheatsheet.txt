@@ -1,3 +1,6 @@
 ======== Cheatsheet (dotfiles/extras/cheatsheet.txt)  =========
-sha256sum <file>                          get sha256 hash of file
-playbell				  play a noise
+sha256sum <file>                   get sha256 hash of file
+playbell			   play a noise
+screenfetch                        output pretty system info (if installed)
+Ctrl+Shift+N                       instantiate a new terminal window
+Ctrl+r                             search back through bash history
