@@ -4,3 +4,4 @@ playbell			   play a noise
 screenfetch                        output pretty system info (if installed)
 Ctrl+Shift+N                       instantiate a new terminal window
 Ctrl+r                             search back through bash history
+watch -n1 <command>                run cmd every 1 seconds e.g. iwconfig
