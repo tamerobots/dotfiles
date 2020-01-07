@@ -3,7 +3,7 @@
 # for examples
 
 #Configuration
-www_dir=
+# www_dir=
 
 # If not running interactively, don't do anything
 case $- in
@@ -229,10 +229,11 @@ if [ "$TERM" != "dumb" -a -z "$BASH_EXECUTION_STRING" ]; then
         command cd "$@" && pwd > ~/.bash_lastdirectory
     }
  # Go to my home directory by default
-    command cd
+    #command cd    
     
+
      # Go to the stored directory now, if possible
-    if [ -f ~/.bash_lastdirectory ]; then
+    if [[ -f ~/.bash_lastdirectory ]]; then
         # Throw away errors about that directory not existing (any more)
         command cd "`cat ~/.bash_lastdirectory`" 2>/dev/null
     fi
@@ -289,7 +290,7 @@ if [ "$TERM" != "dumb" -a -z "$BASH_EXECUTION_STRING" ]; then
       cat ~/.name 
     fi
     #output the current directorys contents
-    l
+    ls
 fi
 
 
@@ -297,4 +298,3 @@ fi
 # Git Cygwin loads this file *and* .bash_profile so set a flag to tell
 # .bash_profile not to load .bashrc again
 BASHRC_DONE=1
-

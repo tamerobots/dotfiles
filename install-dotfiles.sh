@@ -33,3 +33,7 @@ for file in $files; do
     echo "Creating symlink to $file in home directory."
     ln -s $dir/$file ~/$file
 done
+
+echo "Creating simlink to nautilus script for right click open in terminal"
+ln -s ~/dotfiles/extras/openinterminal.sh  ~/.local/share/nautilus/scripts/OpenInTerminal
+chmod +x ~/.local/share/nautilus/scripts/OpenInTerminal
