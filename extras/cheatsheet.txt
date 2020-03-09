@@ -3,6 +3,6 @@ sha256sum <file>                   get sha256 hash of file
 playbell			   play a noise
 screenfetch                        output pretty system info (if installed)
 Ctrl+Shift+N                       instantiate a new terminal window
-Ctrl+r                             search back through bash history
+Ctrl+r                             search bash history (repeat press it)
 watch -n1 <command>                run cmd every 1 seconds e.g. iwconfig
 df -H                              check disk usage
