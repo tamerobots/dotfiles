@@ -264,8 +264,8 @@ if [ "$TERM" != "dumb" -a -z "$BASH_EXECUTION_STRING" ]; then
       alias cheatsheet='less ~/dotfiles/extras/cheatsheet.txt'
     fi
 
-    if [ -f ~/.local/share/sounds/Yaru/stereo/complete.oga ]; then
-      alias playbell='paplay ~/.local/share/sounds/Yaru/stereo/complete.oga'
+    if [ -f /usr/share/sounds/Yaru/stereo/complete.oga ]; then
+      alias playbell='paplay /usr/share/sounds/Yaru/stereo/complete.oga'
     fi
 
 fi # $TERM != "dumb"
