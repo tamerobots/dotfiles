@@ -135,7 +135,6 @@ if [ "$TERM" != "dumb" -a -z "$BASH_EXECUTION_STRING" ]; then
 
     # Various versions of `ls`
 
-
      # Unset the colours that are sometimes set (e.g. Joshua)
     export LS_COLORS=
 
@@ -149,7 +148,7 @@ if [ "$TERM" != "dumb" -a -z "$BASH_EXECUTION_STRING" ]; then
         if [ -z "$*" ]; then
             c .
         else
-            ls -hF --color=always $@
+            ls -hFA --color=always $@
         fi
     }
      # u = up
@@ -201,7 +200,7 @@ if [ "$TERM" != "dumb" -a -z "$BASH_EXECUTION_STRING" ]; then
         echo -en "\e[0m"
 
         # Then pass the rest to ls (just in case we have any use for that!)
-        ls -h --color=always "$@"
+        ls -hFA --color=always "$@"
 
     }
 
@@ -213,7 +212,7 @@ if [ "$TERM" != "dumb" -a -z "$BASH_EXECUTION_STRING" ]; then
         if [ -z "$*" ]; then
             c .
         else
-          ls -hF --color=always $@
+          ls -hFA --color=always $@
         fi
     }
 
@@ -290,7 +289,7 @@ if [ "$TERM" != "dumb" -a -z "$BASH_EXECUTION_STRING" ]; then
       cat ~/.name 
     fi
     #output the current directorys contents
-    ls
+    ls -hFA
 fi
 
 
