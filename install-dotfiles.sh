@@ -37,3 +37,6 @@ done
 echo "Creating simlink to nautilus script for right click open in terminal"
 ln -s ~/dotfiles/extras/openinterminal.sh  ~/.local/share/nautilus/scripts/OpenInTerminal
 chmod +x ~/.local/share/nautilus/scripts/OpenInTerminal
+
+echo ""
+echo "Remember to rename .gitconfig-example to .gitconfig and fill it in with the right github account for this machine, if you plan to use github from this machine."
