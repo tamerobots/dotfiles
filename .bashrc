@@ -148,7 +148,7 @@ if [ "$TERM" != "dumb" -a -z "$BASH_EXECUTION_STRING" ]; then
         if [ -z "$*" ]; then
             c .
         else
-            ls -hFA --color=always $@
+            ls -hFlA --color=always $@
         fi
     }
      # u = up
@@ -200,7 +200,7 @@ if [ "$TERM" != "dumb" -a -z "$BASH_EXECUTION_STRING" ]; then
         echo -en "\e[0m"
 
         # Then pass the rest to ls (just in case we have any use for that!)
-        ls -hFA --color=always "$@"
+        ls -hFlA --color=always "$@"
 
     }
 
@@ -212,7 +212,7 @@ if [ "$TERM" != "dumb" -a -z "$BASH_EXECUTION_STRING" ]; then
         if [ -z "$*" ]; then
             c .
         else
-          ls -hFA --color=always $@
+          ls -hFlA --color=always $@
         fi
     }
 
