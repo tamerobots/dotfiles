@@ -6,3 +6,4 @@ Ctrl+Shift+N                       instantiate a new terminal window
 Ctrl+r                             search bash history (repeat press it)
 watch -n1 <command>                run cmd every 1 seconds e.g. iwconfig
 df -H                              check disk usage
+!123                               execute command number 123 from history
