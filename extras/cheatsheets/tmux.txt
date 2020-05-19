@@ -7,3 +7,4 @@ ctrl+b "                        split vertically
 ctrl+b %                        split horizontally
 ctrl+b o                        move through the panes
 ctrl+b x                        kill the current pane
+tmux kill-session               kills the current session
