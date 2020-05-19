@@ -227,6 +227,15 @@ if [ "$TERM" != "dumb" -a -z "$BASH_EXECUTION_STRING" ]; then
     function cd {
         command cd "$@" && pwd > ~/.bash_lastdirectory
     }
+
+# output cheatsheet if it exists
+   function cheatsheet {
+	if [ -z "$*" ]; then
+		less ~/dotfiles/extras/cheatsheets/cheatsheet.txt
+	else
+		less ~/dotfiles/extras/cheatsheets/$1.txt
+	fi
+   }
  # Go to my home directory by default
     #command cd    
     
@@ -259,9 +268,9 @@ if [ "$TERM" != "dumb" -a -z "$BASH_EXECUTION_STRING" ]; then
       fi
     fi
 
-    if [ -f ~/dotfiles/extras/cheatsheet.txt ]; then
-      alias cheatsheet='less ~/dotfiles/extras/cheatsheet.txt'
-    fi
+#    if [ -f ~/dotfiles/extras/cheatsheet.txt ]; then
+#     alias cheatsheet='less ~/dotfiles/extras/cheatsheet.txt'
+#   fi
 
     if [ -f /usr/share/sounds/Yaru/stereo/complete.oga ]; then
       alias playbell='paplay /usr/share/sounds/Yaru/stereo/complete.oga'

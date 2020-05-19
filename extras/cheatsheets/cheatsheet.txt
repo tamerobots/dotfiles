@@ -7,3 +7,9 @@ Ctrl+r                             search bash history (repeat press it)
 watch -n1 <command>                run cmd every 1 seconds e.g. iwconfig
 df -H                              check disk usage
 !123                               execute command number 123 from history
+<command> !$                       change cmd, keep last arg: cat x, less !$
+find . -name "README*"             find files (e.g. called README) in dir
+find ./somedir -size +512M         find files over a certain size in somedir
+grep -rin 'thing' test.txt         search for text 'thing' in test.txt
+grep -rin 'README*' .              search within files in dir for README*
+tmux                               start tmux session (see 'cheatsheet tmux')
