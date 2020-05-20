@@ -13,3 +13,4 @@ find ./somedir -size +512M         find files over a certain size in somedir
 grep -rin 'thing' test.txt         search for text 'thing' in test.txt
 grep -rin 'README*' .              search within files in dir for README*
 tmux                               start tmux session (see 'cheatsheet tmux')
+ln -s folder/to/link nameOfLink    create a shortcut
