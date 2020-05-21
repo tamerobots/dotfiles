@@ -1,10 +1,12 @@
 =============== Tmux ======================
 Remember, tmux is capable of *persistent* sessions too.
-tmux                            start a new tmux session
-tmux new -s mysession           start a new tmux session called mysession
-tmux a -t mysession             when you come back next day, re log into it
-ctrl+b "                        split vertically
-ctrl+b %                        split horizontally
-ctrl+b o                        move through the panes
-ctrl+b x                        kill the current pane
-tmux kill-session               kills the current session
+tmux                          start a new tmux session
+tmux new -s mysession         start a new tmux session called mysession
+tmux a -t mysession           when you come back next day, re log into it
+tmux ls                       list all tmux sessions
+ctrl+b "                      split vertically
+ctrl+b %                      split horizontally
+ctrl+b o                      move through the panes
+ctrl+b x                      kill the current pane
+ctrl+b :detach                detach current session (logout, but keep it)
+tmux kill-session             kills current session (kill it forever)
