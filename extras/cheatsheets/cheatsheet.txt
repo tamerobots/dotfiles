@@ -16,3 +16,4 @@ tmux                               start tmux session (see 'cheatsheet tmux')
 ln -s folder/to/link nameOfLink    create a shortcut
 dwebp file.png -o file.png         decode a webp file so ubuntu can read it
 file filename.png                  check filetype if fails to open
+date                               output the date (do before long operation)
