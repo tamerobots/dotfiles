@@ -143,6 +143,7 @@ if [ "$TERM" != "dumb" -a -z "$BASH_EXECUTION_STRING" ]; then
     alias ll='ls -hFl --color=always'
     alias la='ls -hFA --color=always'
     alias lla='ls -hFlA --color=always'
+    alias llo='ls -hFlA --color=always | less'
 
  function l {
         if [ -z "$*" ]; then
