@@ -1,4 +1,4 @@
-i======== Cheatsheet (dotfiles/extras/cheatsheet.txt)  =========
+======== Cheatsheet (dotfiles/extras/cheatsheet.txt)  =========
 sha256sum <file>                   get sha256 hash of file
 playbell			   play a noise
 screenfetch                        output pretty system info (if installed)
@@ -18,3 +18,5 @@ dwebp file.png -o file.png         decode a webp file so ubuntu can read it
 file filename.png                  check filetype if fails to open
 date                               output the date (do before long operation)
 tree                               display a tree structure of current dir
+lynx                               text-only web browser
+htop                               see memory usage etc on this computer
