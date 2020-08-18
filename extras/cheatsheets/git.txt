@@ -1,1 +1,5 @@
-placeholder git cheatsheet
+remember to set git remote as SSH remotes, not as HTTPS remotes, so it doesnt ask you for a username and password. Example:
+git remote add origin git@github.com:davedss/whateverrepo.git
+
+
+
