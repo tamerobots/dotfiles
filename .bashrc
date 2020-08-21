@@ -230,11 +230,15 @@ if [ "$TERM" != "dumb" -a -z "$BASH_EXECUTION_STRING" ]; then
     }
 
 # output cheatsheet if it exists
-   function cheatsheet {
+   function cheat {
 	if [ -z "$*" ]; then
 		less ~/dotfiles/extras/cheatsheets/cheatsheet.txt
 	else
-		less ~/dotfiles/extras/cheatsheets/$1.txt
+		if [ -z "$1" == "list" ]; then
+			ls ~/dotfiles/extras/cheatsheets
+		else
+			less ~/dotfiles/extras/cheatsheets/$1.txt
+		fi
 	fi
    }
  # Go to my home directory by default
