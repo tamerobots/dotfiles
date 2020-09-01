@@ -234,7 +234,7 @@ if [ "$TERM" != "dumb" -a -z "$BASH_EXECUTION_STRING" ]; then
 	if [ -z "$*" ]; then
 		less ~/dotfiles/extras/cheatsheets/cheatsheet.txt
 	else
-		if [ -z "$1" == "list" ]; then
+		if [ "$1" == "list" ]; then
 			ls ~/dotfiles/extras/cheatsheets
 		else
 			less ~/dotfiles/extras/cheatsheets/$1.txt
