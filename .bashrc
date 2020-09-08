@@ -230,7 +230,7 @@ if [ "$TERM" != "dumb" -a -z "$BASH_EXECUTION_STRING" ]; then
     }
 
 # output cheatsheet if it exists
-   function cheat {
+   function cheats {
 	if [ -z "$*" ]; then
 		less ~/dotfiles/extras/cheatsheets/cheatsheet.txt
 	else
