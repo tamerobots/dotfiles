@@ -40,7 +40,7 @@ chmod +x ~/.local/share/nautilus/scripts/OpenInTerminal
 
 echo ""
 echo ""
-echo "🐸💡💡💡💡💡💡💡💡💡💡💡💡💡💡💡💡💡💡💡💡💡🐸"
+echo "🐸💡💡💡💡💡💡💡 Reminders 💡💡💡💡💡💡💡🐸"
 echo "Remember to rename .gitconfig-example to .gitconfig and fill it in with the right github account for this machine, if you plan to use github from this machine."
 echo "You can now enter:"
 echo "source ~/.bashrc"
