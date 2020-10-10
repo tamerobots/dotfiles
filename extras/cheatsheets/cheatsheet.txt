@@ -20,3 +20,6 @@ date                               output the date (do before long operation)
 tree                               display a tree structure of current dir
 lynx                               text-only web browser
 htop                               see memory usage etc on this computer
+bashrl                             source ~/.bashrc
+tail -f                            show tail of file, -f is streaming update
+pw                                 ping wikipedia.org 3 times (test internet)

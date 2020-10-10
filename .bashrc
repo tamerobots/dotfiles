@@ -281,6 +281,9 @@ if [ "$TERM" != "dumb" -a -z "$BASH_EXECUTION_STRING" ]; then
       alias playbell='paplay /usr/share/sounds/freedesktop/stereo/complete.oga'
     fi
 
+    alias pw='ping wikipedia.org -c 3'
+    alias bashrl='source ~/.bashrc'
+
 fi # $TERM != "dumb"
 
 # Prevent errors when MSG is set in .bashrc_local
