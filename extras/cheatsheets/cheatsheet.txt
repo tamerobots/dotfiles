@@ -6,6 +6,7 @@ Ctrl+Shift+N                       instantiate a new terminal window
 Ctrl+r                             search bash history (repeat press it)
 watch -n1 <command>                run cmd every 1 seconds e.g. iwconfig
 df -H                              check disk usage
+du -sh <directory>                 check size of dir. remove 's' for tree
 !123                               execute command number 123 from history
 <command> !$                       change cmd, keep last arg: cat x, less !$
 find . -name "README*"             find files (e.g. called README) in dir
