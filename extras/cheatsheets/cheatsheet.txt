@@ -1,4 +1,4 @@
-======== Cheatsheet (dotfiles/extras/cheatsheet.txt)  =========
+======== Cheatsheet (dotfiles/extras/cheatsheet.txt)  ======================
 sha256sum <file>                   get sha256 hash of file
 playbell			   play a noise
 screenfetch                        output pretty system info (if installed)
