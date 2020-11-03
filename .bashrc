@@ -152,6 +152,12 @@ if [ "$TERM" != "dumb" -a -z "$BASH_EXECUTION_STRING" ]; then
             ls -hFlA --color=always $@
         fi
     }
+
+ function cf {
+  # if you input a filename, go to the path of that filename.
+  cd $( dirname $@ )
+
+ }
      # u = up
     alias u='c ..'
     alias uu='c ../..'
