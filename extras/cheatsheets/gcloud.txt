@@ -1,0 +1,3 @@
+================== Gcloud Cheatsheet ==================
+gcloud config list            list your current gcloud configuration
+gcloud 

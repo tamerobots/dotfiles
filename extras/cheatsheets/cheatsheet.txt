@@ -24,3 +24,4 @@ bashrl                             source ~/.bashrc
 tail -f                            show tail of file, -f is streaming update
 pw                                 ping wikipedia.org 3 times (test internet)
 cf </path/to/file/file.end>        cd to the dir in the specified filepath
+xdg-open /directoryname            open dir in file manager e.g caja/nautilus
