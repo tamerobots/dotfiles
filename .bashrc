@@ -44,7 +44,6 @@ if [ "$TERM" != "dumb" -a -z "$BASH_EXECUTION_STRING" ]; then
     case "$TERM" in
         xterm*)
             Titlebar="\u@\h:\$PWD"
-            # Set titlebar now, before SSH key is requested, for KeePass
             echo -ne "\e]2;$USER@$(hostname -s):$PWD\a"
             ;;
         *)
@@ -193,7 +192,7 @@ if [ "$TERM" != "dumb" -a -z "$BASH_EXECUTION_STRING" ]; then
             cd || return
         elif [ "$1" != "." ]; then
             # If "." don't do anything, so that "cd -" still works
-            # Don't output the path as I'm going to anyway (done by "cd -" and cdspell)
+            # Dont output the path as Im going to anyway (done by "cd -" and cdspell)
             cd "$1" >/dev/null || return
         fi
 
@@ -278,10 +277,6 @@ if [ "$TERM" != "dumb" -a -z "$BASH_EXECUTION_STRING" ]; then
         . /etc/bash_completion
       fi
     fi
-
-#    if [ -f ~/dotfiles/extras/cheatsheet.txt ]; then
-#     alias cheatsheet='less ~/dotfiles/extras/cheatsheet.txt'
-#   fi
 
     if [ -f /usr/share/sounds/freedesktop/stereo/complete.oga ]; then
       alias playbell='paplay /usr/share/sounds/freedesktop/stereo/complete.oga'
