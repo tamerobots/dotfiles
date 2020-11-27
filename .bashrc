@@ -227,7 +227,47 @@ if [ "$TERM" != "dumb" -a -z "$BASH_EXECUTION_STRING" ]; then
             alias cw="c $www_dir"
         fi
 
-  
+function bm {
+    pwd >> ~/.bmhistory
+    echo "Bookmarked to ~/.bmhistory. 📕"
+    echo "Enter 'bml' to show bookmark list."
+}  
+
+function bml {
+    if [ -z "$*" ]; then
+        echo "--- Bookmarks List 📕 ---"
+        echo "enter j <number> to jump to that bookmark dir."
+        echo "use 'bmldel <number> to delete that bookmark."
+        cat -n ~/.bmhistory
+    else
+       grep -n $1 ~/.bmhistory
+    fi
+}
+
+function j {
+    if [ -z "$*" ]; then 
+        echo "no argument specified. enter 'bml' for list of bookmarks to visit."
+    else 
+       lines=$(wc -l < ~/.bmhistory)
+       if [ $1 -gt ${lines} ] || [ $1 -eq 0 ]; then
+           echo "there is no bookmarks entry for that number."
+       else
+           #TODO need to make this handle names with spaces in, and handle security.
+           cd $(echo "sed -n $1p ~/.bmhistory)
+           echo "Pop! 🔮 You're at:" $(pwd) 
+       fi
+    fi
+}
+
+function bmldel {
+    if [ -z "$*" ]; then
+	echo "no argument specified. Enter 'bml' to list bookmarks and 'bmldel <number>' to delete one."
+    else 
+        sed -i $1d ~/.bmhistory
+        echo "deleted bookmark from ~/.bmhistory."
+    fi
+
+}
 
 # Remember the last directory visited
     function cd {
