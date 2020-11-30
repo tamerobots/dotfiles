@@ -255,7 +255,8 @@ function j {
             echo "there is no bookmarks entry for that number."
         else
             #TODO need to make this handle names with spaces in, and handle security.
-          cd $(sed -n ${1}p ~/.bmhistory)
+          target=$(echo \'$(sed -n ${1}p ~/.bmhistory)\')
+          eval cd $target
           echo "Pop! 🔮 You're at:" $(pwd)
         fi
     fi
