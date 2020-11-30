@@ -1,0 +1,2 @@
+====================== Nano =========================
+Press Alt+C to see the line number at the bottom
