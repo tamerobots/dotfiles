@@ -236,8 +236,10 @@ function bm {
 function bml {
     if [ -z "$*" ]; then
         echo "--- Bookmarks List 📕 ---"
+        echo "enter bm while in a folder to add a bookmark there."
         echo "enter j <number> to jump to that bookmark dir."
-        echo "use 'bmldel <number> to delete that bookmark."
+        echo "use bmldel <number> to delete that bookmark."
+        echo "bookmarks are stored in ~/.bmhistory if you wish to reorder them."
         cat -n ~/.bmhistory
     else
        grep -n $1 ~/.bmhistory
@@ -247,15 +249,15 @@ function bml {
 function j {
     if [ -z "$*" ]; then 
         echo "no argument specified. enter 'bml' for list of bookmarks to visit."
-    else 
-       lines=$(wc -l < ~/.bmhistory)
-       if [ $1 -gt ${lines} ] || [ $1 -eq 0 ]; then
-           echo "there is no bookmarks entry for that number."
-       else
-           #TODO need to make this handle names with spaces in, and handle security.
-           cd $(echo "sed -n $1p ~/.bmhistory)
-           echo "Pop! 🔮 You're at:" $(pwd) 
-       fi
+    else
+        lines=$(wc -l < ~/.bmhistory)
+        if [ $1 -gt ${lines} ] || [ $1 -eq 0 ]; then
+            echo "there is no bookmarks entry for that number."
+        else
+            #TODO need to make this handle names with spaces in, and handle security.
+          cd $(sed -n ${1}p ~/.bmhistory)
+          echo "Pop! 🔮 You're at:" $(pwd)
+        fi
     fi
 }
 
@@ -266,7 +268,6 @@ function bmldel {
         sed -i $1d ~/.bmhistory
         echo "deleted bookmark from ~/.bmhistory."
     fi
-
 }
 
 # Remember the last directory visited
