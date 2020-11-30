@@ -254,9 +254,8 @@ function j {
         if [ $1 -gt ${lines} ] || [ $1 -eq 0 ]; then
             echo "there is no bookmarks entry for that number."
         else
-            #TODO need to make this handle names with spaces in, and handle security.
-          target=$(echo \'$(sed -n ${1}p ~/.bmhistory)\')
-          eval cd $target
+          target=$(echo $(sed -n ${1}p ~/.bmhistory))
+          cd "`echo $target`"
           echo "Pop! 🔮 You're at:" $(pwd)
         fi
     fi
