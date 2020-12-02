@@ -44,7 +44,6 @@ if [ "$TERM" != "dumb" -a -z "$BASH_EXECUTION_STRING" ]; then
     case "$TERM" in
         xterm*)
             Titlebar="\u@\h:\$PWD"
-            # Set titlebar now, before SSH key is requested, for KeePass
             echo -ne "\e]2;$USER@$(hostname -s):$PWD\a"
             ;;
         *)
@@ -152,6 +151,12 @@ if [ "$TERM" != "dumb" -a -z "$BASH_EXECUTION_STRING" ]; then
             ls -hFlA --color=always $@
         fi
     }
+
+ function cf {
+  # if you input a filename, go to the path of that filename.
+  cd $( dirname $@ )
+
+ }
      # u = up
     alias u='c ..'
     alias uu='c ../..'
@@ -187,7 +192,7 @@ if [ "$TERM" != "dumb" -a -z "$BASH_EXECUTION_STRING" ]; then
             cd || return
         elif [ "$1" != "." ]; then
             # If "." don't do anything, so that "cd -" still works
-            # Don't output the path as I'm going to anyway (done by "cd -" and cdspell)
+            # Dont output the path as Im going to anyway (done by "cd -" and cdspell)
             cd "$1" >/dev/null || return
         fi
 
@@ -222,7 +227,48 @@ if [ "$TERM" != "dumb" -a -z "$BASH_EXECUTION_STRING" ]; then
             alias cw="c $www_dir"
         fi
 
-  
+function bm {
+    pwd >> ~/.bmhistory
+    echo "Bookmarked to ~/.bmhistory. 📕"
+    echo "Enter 'bml' to show bookmark list."
+}  
+
+function bml {
+    if [ -z "$*" ]; then
+        echo "--- Bookmarks List 📕 ---"
+        echo "enter bm while in a folder to add a bookmark there."
+        echo "enter j <number> to jump to that bookmark dir."
+        echo "use bmldel <number> to delete that bookmark."
+        echo "bookmarks are stored in ~/.bmhistory if you wish to reorder them."
+        cat -n ~/.bmhistory
+    else
+       grep -n $1 ~/.bmhistory
+    fi
+}
+
+function j {
+    if [ -z "$*" ]; then 
+        echo "no argument specified. enter 'bml' for list of bookmarks to visit."
+    else
+        lines=$(wc -l < ~/.bmhistory)
+        if [ $1 -gt ${lines} ] || [ $1 -eq 0 ]; then
+            echo "there is no bookmarks entry for that number."
+        else
+          target=$(echo $(sed -n ${1}p ~/.bmhistory))
+          cd "`echo $target`"
+          echo "Pop! 🔮 You're at:" $(pwd)
+        fi
+    fi
+}
+
+function bmldel {
+    if [ -z "$*" ]; then
+	echo "no argument specified. Enter 'bml' to list bookmarks and 'bmldel <number>' to delete one."
+    else 
+        sed -i $1d ~/.bmhistory
+        echo "deleted bookmark from ~/.bmhistory."
+    fi
+}
 
 # Remember the last directory visited
     function cd {
@@ -272,10 +318,6 @@ if [ "$TERM" != "dumb" -a -z "$BASH_EXECUTION_STRING" ]; then
         . /etc/bash_completion
       fi
     fi
-
-#    if [ -f ~/dotfiles/extras/cheatsheet.txt ]; then
-#     alias cheatsheet='less ~/dotfiles/extras/cheatsheet.txt'
-#   fi
 
     if [ -f /usr/share/sounds/freedesktop/stereo/complete.oga ]; then
       alias playbell='paplay /usr/share/sounds/freedesktop/stereo/complete.oga'
