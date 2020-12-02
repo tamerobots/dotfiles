@@ -37,6 +37,7 @@ done
 echo "Creating simlink to nautilus script for right click open in terminal"
 ln -s ~/dotfiles/extras/openinterminal.sh  ~/.local/share/nautilus/scripts/OpenInTerminal
 chmod +x ~/.local/share/nautilus/scripts/OpenInTerminal
+touch ~/.bmhistory
 
 echo ""
 echo ""
