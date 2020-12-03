@@ -129,7 +129,7 @@ if [ "$TERM" != "dumb" -a -z "$BASH_EXECUTION_STRING" ]; then
         PS1="${PS1}\[\e[1;35m\]\$KeyStatus"     # SSH key status                Pink
         PS1="${PS1}\n"                          # (New line)
         PS1="${PS1}\[\e[31;1m\]\\\$"            # $                             Red
-        PS1="${PS1}\[\e[0m\] "
+        PS1="${PS1}\[\e[0m\] "                  # space and set color back to white
     }
 
     getmachineemoji
