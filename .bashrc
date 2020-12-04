@@ -91,6 +91,13 @@ if [ "$TERM" != "dumb" -a -z "$BASH_EXECUTION_STRING" ]; then
             echo $PWD
         fi
     }
+
+    function getmachineemoji
+     {
+         # inject an emoji into the prompt so you can easily discern between machines and you are 
+         # reminded of which machine you're using. Can have multiple emojis, or whatever you want.
+         machineemoji=$(cat ~/.machineemoji)
+     }
     # Function to update the prompt with a given message (makes it easier to distinguish between different windows)
    function MSG
     {
@@ -111,19 +118,21 @@ if [ "$TERM" != "dumb" -a -z "$BASH_EXECUTION_STRING" ]; then
         # Set the prompt
         PS1="${TitlebarCode}\n"                 # Titlebar (see above)
         PS1="${PS1}${MessageCode}"              # Message (see above)
-        PS1="${PS1}\[\e[30;1m\]["               # [                             Grey
+        PS1="${PS1}\[\e[35;1m\]["               # [                             Purple
         PS1="${PS1}\[\e[31;1m\]\u"              # Username                      Red
-        PS1="${PS1}\[\e[30;1m\]@"               # @                             Grey
+        PS1="${PS1}\[\e[35;1m\]@"               # @                             Purple
         PS1="${PS1}\[\e[32;1m\]\h"              # Hostname                      Green
-        PS1="${PS1}\[\e[30;1m\]:"               # :                             Grey
+        PS1="${PS1}\[\e[30;1m\]\$machineemoji"  # put in emoji from ~/.machineemoji
+        PS1="${PS1}\[\e[35;1m\]\:"              # :                             Purple
         PS1="${PS1}\[\e[33;1m\]\`vcsprompt\`"   # Working directory / Git / Hg  Yellow
-        PS1="${PS1}\[\e[30;1m\]]"               # ]                             Grey
+        PS1="${PS1}\[\e[35;1m\]]"               # ]                             Grey
         PS1="${PS1}\[\e[1;35m\]\$KeyStatus"     # SSH key status                Pink
         PS1="${PS1}\n"                          # (New line)
         PS1="${PS1}\[\e[31;1m\]\\\$"            # $                             Red
-        PS1="${PS1}\[\e[0m\] "
+        PS1="${PS1}\[\e[0m\] "                  # space and set color back to white
     }
 
+    getmachineemoji
     # Default to prompt with no message
     MSG
 

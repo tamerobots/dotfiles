@@ -1,5 +1,12 @@
 remember to set git remote as SSH remotes, not as HTTPS remotes, so it doesnt ask you for a username and password. Example:
 git remote add origin git@github.com:davedss/whateverrepo.git
 
+If you're worried that you may have committed some sensitive info to a git repository, like an API key or a password etc, you can search the *content* of all commits to find it using this:
+
+git grep <regexp> $(git rev-list --all)
+
+eg:
+git grep 'password123' $(git rev-list --all)
+
 
 
