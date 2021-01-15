@@ -1,3 +1,5 @@
 ================== Cloud Shell, bq, etc commands ================
-bq show --schema --format=prettyjson dataset_name.table_name 
-dl <filename>                                 download <filename>
+bq show --schema --format=prettyjson dataset_name.table_name    (remember you will first need to change project to the project in question to output the schema)
+gcloud config set project <project-name>                        change project
+dl <filename>                                                   download <filename>
+
