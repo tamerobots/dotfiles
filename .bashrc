@@ -143,6 +143,9 @@ if [ "$TERM" != "dumb" -a -z "$BASH_EXECUTION_STRING" ]; then
     alias mv='mv -i'
     alias rm='rm -i'
 
+    # because i'm lazy
+    alias hs='history'
+
     # Various versions of `ls`
 
      # Unset the colours that are sometimes set (e.g. Joshua)
